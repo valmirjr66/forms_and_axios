@@ -54,7 +54,7 @@ const SampleForm = () => {
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Qual o seu país de origem?"
+          label="Qual o país de origem?"
           inputProps={{
             ...params.inputProps,
             autoComplete: 'new-password'

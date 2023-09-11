@@ -7,21 +7,23 @@ import { Toaster } from 'react-hot-toast';
 function App() {
   const [operation, setOperation] = useState('view');
 
+  const ChangeViewButton = ({ to, children }) => (
+    <span className='Link' onClick={() => setOperation(to)}>
+      {children}
+    </span>
+  )
+
   return (
     <div className="App">
       <Toaster />
       {operation === 'view' ?
         <>
-          <span className='Link' onClick={() => setOperation('insert')}>
-            Inserir usuário
-          </span>
+          <ChangeViewButton to='insert'>Inserir usuário</ChangeViewButton>
           <Visualization />
         </>
         :
         <>
-          <span className='Link' onClick={() => setOperation('view')}>
-            Listar usuários
-          </span>
+          <ChangeViewButton to='view'>Listar usuários</ChangeViewButton>
           <SampleForm />
         </>}
     </div>

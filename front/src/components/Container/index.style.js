@@ -16,13 +16,13 @@ export const Wrapper = styled.div`
   
   @keyframes pulse {
     0% {
-      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
     }
     50% {
       box-shadow: 0px 0px 30px rgba(0, 0, 0, 0);
     }
     100% {
-      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
     }
   }
 `;

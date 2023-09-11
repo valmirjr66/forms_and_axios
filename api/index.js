@@ -1,0 +1,41 @@
+const bodyParser = require('body-parser');
+const express = require('express');
+const cors = require('cors');
+const { v4: uuidv4 } = require('uuid');
+require('dotenv').config();
+
+const app = express();
+
+app.use(bodyParser.json());
+
+app.use(cors());
+
+let users = [];
+
+app.use((req, _, next) => {
+  if (req.headers['x-dummy-token'] === process.env.DEFAULT_TOKEN)
+    next();
+  else
+    next("Not authorized!");
+});
+
+app.get('/api/users', (_, res) => {
+  res.send(users);
+});
+
+app.delete('/api/users/:id', (req, res) => {
+  users = users.filter(user => user.id !== req.params.id)
+  res.status(200).send();
+});
+
+app.post('/api/users', (req, res) => {
+  if (users.some(user => user.name === req.body.name)) {
+    res.status(400).send("Nome já cadastrado");
+  } else {
+    const newUser = { id: uuidv4(), ...req.body }
+    users.push(newUser);
+    res.send(newUser);
+  }
+});
+
+app.listen(8000);

@@ -1,4 +1,6 @@
-.App {
+import styled from 'styled-components'
+
+export const Wrapper = styled.div`
   text-align: center;
   display: flex;
   height: 100vh;
@@ -8,18 +10,4 @@
   background-color: darkslategray;
   color: white;
   flex-direction: column;
-}
-
-.Link {
-  text-decoration: underline;
-  margin-bottom: 16px;
-  cursor: pointer;
-
-  :hover {
-    color: blue;
-  }
-}
-
-.Link:hover {
-    color: red;
-}
+`;

@@ -9,20 +9,6 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-evenly;
   background-color: lightgray;
-  animation: pulse 3s infinite;
   width: ${props => props.width || 350}px;
   height: ${props => props.height || 300}px;
-  color: black;
-  
-  @keyframes pulse {
-    0% {
-      box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
-    }
-    50% {
-      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0);
-    }
-    100% {
-      box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
-    }
-  }
 `;

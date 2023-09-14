@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import './index.css';
 import Home from './pages/Home';
-import InsertUser from './pages/InsertUser';
+import Login from './pages/Login';
 import ListUsers from './pages/ListUsers';
 
 const router = createBrowserRouter([
@@ -15,8 +15,8 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/signup",
-    element: <InsertUser />,
+    path: "/signin",
+    element: <Login />,
   },
   {
     path: "/adm",

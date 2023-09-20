@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/adm",
+    path: "/adm/list-users",
     element: <ListUsers />,
   }
 ]);

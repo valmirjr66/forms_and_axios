@@ -24,10 +24,7 @@ import { Toaster } from "react-hot-toast";
 import { AnimatedTitle, Wrapper } from "./index.style";
 
 export default function Panel({ children }) {
-  const TITLE_ANIMATION_DURATION = 600;
-
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [playTitleMotion, setPlayTitleMotion] = useState(false);
 
   const theme = createTheme({
     palette: {
@@ -38,12 +35,7 @@ export default function Panel({ children }) {
   });
 
   const stringToTextFragments = (str) => str.split('')
-    .map((char, i) => <AnimatedTitle.Fragment style={{ "--i": i }}>{char}</AnimatedTitle.Fragment>)
-
-  const triggerTitleAnimation = () => {
-    setPlayTitleMotion(true);
-    setTimeout(() => setPlayTitleMotion(false), TITLE_ANIMATION_DURATION * 2);
-  }
+    .map((char, i) => <AnimatedTitle.Fragment style={{ "--index": i }}>{char}</AnimatedTitle.Fragment>)
 
   return (
     <ThemeProvider theme={theme}>
@@ -79,16 +71,11 @@ export default function Panel({ children }) {
               edge="start"
               color="inherit"
               aria-label="menu"
-              sx={{ mr: 2 }}
               onClick={() => setMenuIsOpen(true)}
             >
               <MenuIcon />
             </IconButton>
-            <AnimatedTitle.Box
-              duration={TITLE_ANIMATION_DURATION}
-              play={playTitleMotion}
-              onMouseOver={triggerTitleAnimation}
-            >
+            <AnimatedTitle.Box as='a' href='/'>
               {stringToTextFragments("Café Soviet")}
             </AnimatedTitle.Box>
             <Button variant='outlined' color="inherit" href='signin'>

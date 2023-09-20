@@ -21,24 +21,25 @@ export const AnimatedTitle = {
   font-size: 60px;
   font-family: Coffee;
   flex-grow: 1;
-  cursor: pointer;
-
-  ${(props) => props.play &&
-    `span {
-      animation: breeze ${props.duration || 1000}ms ease;
-      animation-delay: calc(50ms * var(--i));
-    }`
+  text-decoration: none;
+  color: inherit;
+  
+  span {
+    animation: breeze 60000ms ease-in-out infinite;
+    animation-delay: calc(50ms * var(--index));
   }
   
   @keyframes breeze {
-    0%, 100% {
+    0%, 2% {
       transform: scale(1);
+      opacity: 1;
+      filter: unset;
     }
 
-    50% {
+    1% {
       transform: scale(1.2) translateY(-10px);
       filter: blur(5px);
-      opacity: 0.2
+      opacity: 0.2;
     }
   }
   `,

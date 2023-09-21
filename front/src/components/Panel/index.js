@@ -2,11 +2,12 @@ import {
   ContentCopy,
   ContentPaste,
   Logout,
-  Person,
-  Menu as MenuIcon
+  Menu as MenuIcon,
+  Person
 } from '@mui/icons-material';
 import {
   AppBar,
+  Box,
   Button,
   Divider,
   Drawer,
@@ -33,9 +34,6 @@ export default function Panel({ children }) {
       }
     },
   });
-
-  const stringToTextFragments = (str) => str.split('')
-    .map((char, i) => <AnimatedTitle.Fragment style={{ "--index": i }}>{char}</AnimatedTitle.Fragment>)
 
   return (
     <ThemeProvider theme={theme}>
@@ -76,7 +74,12 @@ export default function Panel({ children }) {
               <MenuIcon />
             </IconButton>
             <AnimatedTitle.Box as='a' href='/'>
-              {stringToTextFragments("Café Soviet")}
+              {
+                "Café Soviet".split('').map((char, i) =>
+                  <AnimatedTitle.Fragment style={{ "--index": i }}>
+                    {char}
+                  </AnimatedTitle.Fragment>)
+              }
             </AnimatedTitle.Box>
             <Button variant='outlined' color="inherit" href='signin'>
               <Person sx={{ marginRight: 1 }} />
@@ -87,7 +90,9 @@ export default function Panel({ children }) {
 
         <Toaster />
 
-        {children}
+        <Box sx={{ marginTop: 30, height: '100vh' }}>
+          {children}
+        </Box>
       </Wrapper>
     </ThemeProvider>
   );

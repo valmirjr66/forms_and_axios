@@ -23,3 +23,9 @@ export function deleteUser(id, callback, errorHandler) {
     .then(callback)
     .catch(errorHandler);
 }
+
+export function listProducts(callback, errorHandler) {
+  api.get('/products')
+    .then(callback)
+    .catch(errorHandler);
+}

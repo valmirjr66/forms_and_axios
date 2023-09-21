@@ -38,4 +38,8 @@ app.post('/api/users', (req, res) => {
   }
 });
 
+app.get('/api/products', (_, res) => {
+  res.send(products);
+});
+
 app.listen(8000);

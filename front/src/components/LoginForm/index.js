@@ -23,7 +23,7 @@ const LoginForm = () => {
   }
 
   return <Container>
-    <Typography>Cadastre um usuário</Typography>
+    <Typography>Faça seu cadastro</Typography>
     <TextField
       id='name'
       label="Qual o nome?"
@@ -65,7 +65,8 @@ const LoginForm = () => {
     <Button variant="contained" type='submit' onClick={submitForm} disabled={!name || !country}>
       Cadastrar
     </Button>
-  </Container>;
+    <Typography as='a' href='/'>Já tem uma conta? Clique aqui</Typography>
+  </Container>
 }
 
 export default LoginForm;

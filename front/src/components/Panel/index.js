@@ -1,6 +1,6 @@
 import {
-  ContentCopy,
-  ContentPaste,
+  Chat,
+  LocalGroceryStore,
   Logout,
   Menu as MenuIcon,
   Person
@@ -42,22 +42,22 @@ export default function Panel({ children }) {
           <MenuList>
             <MenuItem>
               <ListItemIcon>
-                <ContentCopy fontSize="small" />
+                <LocalGroceryStore fontSize="small" />
               </ListItemIcon>
-              <ListItemText>Copy</ListItemText>
+              <ListItemText>Carrinho</ListItemText>
             </MenuItem>
             <MenuItem>
               <ListItemIcon>
-                <ContentPaste fontSize="small" />
+                <Chat fontSize="small" />
               </ListItemIcon>
-              <ListItemText>Paste</ListItemText>
+              <ListItemText>Ajuda</ListItemText>
             </MenuItem>
             <Divider />
             <MenuItem>
               <ListItemIcon>
                 <Logout fontSize="small" />
               </ListItemIcon>
-              <ListItemText>Logout</ListItemText>
+              <ListItemText>Sair</ListItemText>
             </MenuItem>
           </MenuList>
         </Drawer>

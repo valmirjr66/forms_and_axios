@@ -14,11 +14,11 @@ export default function Home() {
 
   return (
     <Panel>
-      <Grid style={{ padding: '10px 150px' }} container spacing={{ xs: 8, md: 8 }} columns={{ md: 4 }}>
+      <Grid style={{ padding: '10px 150px' }} container spacing={{ xs: 16, md: 16 }} columns={{ md: 3 }}>
         {
           products.map(product => (
             <Grid item xs={1} key={product.key}>
-              <Paper sx={{ flexGrow: 1, padding: '50px 10px' }}>
+              <Paper sx={{ flexGrow: 1, padding: '50px 10px', backgroundColor: '#bf9c83', color: 'white' }}>
                 {product.name}
                 <Divider sx={{ marginTop: 5, marginBottom: 5 }} />
                 {product.price}

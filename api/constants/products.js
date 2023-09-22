@@ -1,4 +1,4 @@
-export default [
+const products = [
   {
     "key": "5b3e3588-74fb-4d5e-8216-3c328c67c2d7",
     "name": "Café Especial Brasil",
@@ -243,3 +243,5 @@ export default [
     "notes": "Notas de caramelo, amêndoas e baunilha."
   }
 ];
+
+module.exports = products;

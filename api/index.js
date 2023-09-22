@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const cors = require('cors');
+const products = require('./constants/products.js');
 const { v4: uuidv4 } = require('uuid');
 require('dotenv').config();
 

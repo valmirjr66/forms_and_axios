@@ -16,4 +16,11 @@
 5. Nenhum arquivo (exceto constantes) deve ter mais que 300 linhas
 6. Nenhum CSS deve ser feito _inline_
 7. Todos os _requests_ devem ter o devido tratamento de erro e sucesso
-8. A política de branches a ser seguida será o one flow ![Alt text](image.png)
+8. A política de *branches* a ser seguida será a seguinte:
+   1. Haverão *branches* do tipo **feature**, **fix** e **master**
+   2. As *branches* **feature** serão para desenvolvimento de novas funcionalidade (ex.: `feat/dashboard-panel`)
+   3. As *branches* **fix** serão para ajustes e correção de *bugs* (ex.: `fix/blank-page-error`)
+   4. A *branch* **master** será o destino final de **features** e **fixes**, mas **NENHUM** *commit* poderá ser feito diretamente na **master**
+   5. Para uma *branch* **fix** ou **feature** ser mergeada, deve ser aberto um *Merge Request* com pelo menos um *reviewer* obrigatório
+   6. A *branch* pode ser mergeada quando o MR receber uma aprovação
+9. O objetivo desse projeto não é criar uma aplicação perfeita, mas aprender coletivamente!

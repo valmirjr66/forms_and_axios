@@ -81,7 +81,7 @@ export default function Panel({ children }) {
                   </AnimatedTitle.Fragment>)
               }
             </AnimatedTitle.Box>
-            <Button variant='outlined' color="inherit" href='signin'>
+            <Button variant='outlined' color="inherit" href='cadastro'>
               <Person sx={{ marginRight: 1 }} />
               Entrar
             </Button>

@@ -8,7 +8,7 @@ import { insertUser } from '../../services';
 import Container from '../Container';
 import { countries } from './constants';
 
-const LoginForm = () => {
+const SignupForm = () => {
   const [name, setName] = useState('');
   const [country, setCountry] = useState('');
 
@@ -69,4 +69,4 @@ const LoginForm = () => {
   </Container>
 }
 
-export default LoginForm;
+export default SignupForm;

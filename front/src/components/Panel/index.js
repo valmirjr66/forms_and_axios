@@ -3,8 +3,8 @@ import {
   LocalGroceryStore,
   Logout,
   Menu as MenuIcon,
-  Person
-} from '@mui/icons-material';
+  Person,
+} from "@mui/icons-material";
 import {
   AppBar,
   Box,
@@ -18,7 +18,7 @@ import {
   MenuList,
   ThemeProvider,
   Toolbar,
-  createTheme
+  createTheme,
 } from "@mui/material";
 import { useState } from "react";
 import { Toaster } from "react-hot-toast";
@@ -30,8 +30,8 @@ export default function Panel({ children }) {
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#6F4E37'
-      }
+        main: "#6F4E37",
+      },
     },
   });
 
@@ -73,15 +73,16 @@ export default function Panel({ children }) {
             >
               <MenuIcon />
             </IconButton>
-            <AnimatedTitle.Box as='a' href='/'>
-              {
-                "Café Soviet".split('').map((char, i) =>
+            <AnimatedTitle.Box>
+              <AnimatedTitle.Text as="a" href="/">
+                {"Café Soviet".split("").map((char, i) => (
                   <AnimatedTitle.Fragment style={{ "--index": i }}>
                     {char}
-                  </AnimatedTitle.Fragment>)
-              }
+                  </AnimatedTitle.Fragment>
+                ))}
+              </AnimatedTitle.Text>
             </AnimatedTitle.Box>
-            <Button variant='outlined' color="inherit" href='cadastro'>
+            <Button variant="outlined" color="inherit" href="cadastro">
               <Person sx={{ marginRight: 1 }} />
               Entrar
             </Button>
@@ -90,9 +91,7 @@ export default function Panel({ children }) {
 
         <Toaster />
 
-        <Box sx={{ marginTop: 30, height: '100vh' }}>
-          {children}
-        </Box>
+        <Box sx={{ marginTop: 30, height: "100vh" }}>{children}</Box>
       </Wrapper>
     </ThemeProvider>
   );

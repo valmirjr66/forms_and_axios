@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: inline-flex;
@@ -9,6 +9,5 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-evenly;
   background-color: lightgray;
-  width: ${props => props.width || 350}px;
-  height: ${props => props.height || 300}px;
+  width: ${(props) => props.width || 350}px;
 `;

@@ -6,10 +6,15 @@ import {
 } from "react-router-dom";
 import './index.css';
 import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 import Signup from './pages/Signup';
 import ListUsers from './pages/ListUsers';
 
 const router = createBrowserRouter([
+  {
+    path: "*",
+    element: <NotFound />,
+  },
   {
     path: "/",
     element: <Home />,

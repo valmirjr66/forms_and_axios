@@ -3,9 +3,15 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import Panel from "../components/Panel";
 import { listProducts } from '../services';
+import { useNavigate } from 'react-router-dom'
 
 export default function Home() {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
+
+  const navigateToProductDetails = ( id )=>{
+    navigate(`/products/${id}`);
+  }
 
   useEffect(() => {
     listProducts(products => setProducts(products.data),
@@ -22,6 +28,7 @@ export default function Home() {
                 {product.name}
                 <Divider sx={{ marginTop: 5, marginBottom: 5 }} />
                 {product.price}
+                <button onClick={()=>navigateToProductDetails(product.key)}>Detalhes</button>
               </Paper>
             </Grid>
           ))

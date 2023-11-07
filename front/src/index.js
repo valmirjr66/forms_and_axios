@@ -8,6 +8,7 @@ import './index.css';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import ListUsers from './pages/ListUsers';
+import ProductDetails from './pages/ProductDetails';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,11 @@ const router = createBrowserRouter([
   {
     path: "/adm/listar-usuarios",
     element: <ListUsers />,
-  }
+  },
+  {
+    path: "/products/:id",
+    element: <ProductDetails />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

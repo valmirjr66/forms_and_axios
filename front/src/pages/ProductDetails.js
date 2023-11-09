@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+import CoffeeIcon from "@mui/icons-material/Coffee";
+import CoffeeOutlinedIcon from "@mui/icons-material/CoffeeOutlined";
 import {
+  Button,
+  Container,
+  Divider,
   Grid,
   Paper,
   Typography,
-  Button,
-  Divider,
-  Container,
 } from "@mui/material";
-import { getProductById } from "../services";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import Panel from "../components/Panel";
-import toast from "react-hot-toast";
-import CoffeeIcon from "@mui/icons-material/Coffee";
-import CoffeeOutlinedIcon from "@mui/icons-material/CoffeeOutlined";
+import { getProductById } from "../services";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -41,14 +41,8 @@ export default function ProductDetails() {
 
   useEffect(() => {
     if (id) {
-      getProductById(
-        id,
-        (product) => setDetails(product.data),
-        (err) =>
-          toast.error(
-            err.response?.data || "Erro ao entrar na página do produto"
-          )
-      );
+      getProductById(id, (product) => setDetails(product.data),
+        (err) => toast.error(err.response?.data || "Erro ao entrar na página do produto"));
     }
   }, [id]);
 

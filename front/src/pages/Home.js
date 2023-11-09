@@ -9,10 +9,6 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
 
-  const navigateToProductDetails = ( id )=>{
-    navigate(`/products/${id}`);
-  }
-
   useEffect(() => {
     listProducts(products => setProducts(products.data),
       err => toast.error(err.response?.data || "Erro na listagem de produtos"));
@@ -28,7 +24,7 @@ export default function Home() {
                 {product.name}
                 <Divider sx={{ marginTop: 5, marginBottom: 5 }} />
                 {product.price}
-                <button onClick={()=>navigateToProductDetails(product.key)}>Detalhes</button>
+                <button onClick={() => navigate(`/products/${product.key}`)}>Detalhes</button>
               </Paper>
             </Grid>
           ))

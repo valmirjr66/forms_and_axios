@@ -1,3 +1,5 @@
+// a ideia seria que com os novos arquivos gerados, esse arquivo seja excluído
+
 const bodyParser = require("body-parser");
 const express = require("express");
 const cors = require("cors");

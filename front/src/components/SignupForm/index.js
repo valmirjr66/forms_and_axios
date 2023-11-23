@@ -155,6 +155,7 @@ const SignupForm = () => {
         value={user.password}
         repeatValue={user.repeatPassword}
         validatePassword={validatePassword}
+        repeatPassword={true}
       />
       <Button
         variant="contained"
@@ -177,7 +178,7 @@ const SignupForm = () => {
       >
         Cadastrar
       </Button>
-      <Typography as="a" href="/">
+      <Typography as="a" href="/entrar">
         Já tem uma conta? Clique aqui
       </Typography>
     </Container>

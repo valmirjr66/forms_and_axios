@@ -1,6 +1,7 @@
 const bodyParser = require("body-parser");
 const express = require("express");
 const cors = require("cors");
+const users = require("./constants/users.js");
 const products = require("./constants/products.js");
 const { v4: uuidv4 } = require("uuid");
 require("dotenv").config();
@@ -26,9 +27,9 @@ app.delete("/api/users/:id", (req, res) => {
 });
 
 app.post("/api/users/login", (req, res) => {
-  const userFound = users.find((user) => user.email === req.body.email);
+  const userFound = users.find((user) => user.email === req.body.user.email && user.password === req.body.user.password);
   if (userFound) {
-    res.status(400).send(userFound);
+    res.status(200).send("Ok");
   } else {
     res.status(404);
   }

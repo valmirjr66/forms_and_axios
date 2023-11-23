@@ -50,3 +50,5 @@ const users = [
     receivePromotionalInfo: true,
   },
 ];
+
+module.exports = users;

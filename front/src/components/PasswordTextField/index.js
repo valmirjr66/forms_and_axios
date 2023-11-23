@@ -14,6 +14,7 @@ function PasswordTextField({
   passwordHelperText,
   repeatHelperText,
   validatePassword,
+  repeatPassword,
   ...props
 }) {
   const [passwordValue, setPasswordValue] = useState(value);
@@ -66,7 +67,7 @@ function PasswordTextField({
         helperText={passwordValue && (passwordHelperText || "")}
         {...props}
       />
-      {repeatValue && (
+      {repeatPassword && (
         <TextField
           label={repeatLabel}
           type="password"

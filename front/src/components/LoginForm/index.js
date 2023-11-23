@@ -6,15 +6,23 @@ import Container from "../Container";
 import Button from "@mui/material/Button";
 import { loginUser } from "../../services";
 import toast from "react-hot-toast";
+import { redirect } from "react-router-dom";
 
 const LoginForm = () => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
 
   const loginForm = () => {
-    const response = loginUser(user);
-    if (response) {
-      toast.success("Usuário logado");
-    }
+    loginUser(
+      { user: user },
+      () => {
+        toast.success("Login bem sucedido");
+        redirect("/");
+      },
+      (err) => {toast.error(err.response?.data || "Erro na operação"); console.log(err)}
+    );
   };
 
   return (
@@ -50,11 +58,7 @@ const LoginForm = () => {
         value={user.password}
         validatePassword={validatePassword}
       />
-      <Button
-        variant="contained"
-        type="submit"
-        onClick={loginForm}
-      >
+      <Button variant="contained" type="submit" onClick={loginForm}>
         Login
       </Button>
     </Container>

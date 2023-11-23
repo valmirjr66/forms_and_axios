@@ -66,28 +66,30 @@ function PasswordTextField({
         helperText={passwordValue && (passwordHelperText || "")}
         {...props}
       />
-      <TextField
-        label={repeatLabel}
-        type="password"
-        value={repeatPasswordValue}
-        onChange={handleRepeatChange}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              {!isRepeatValid && repeatPasswordValue && (
-                <IconButton>
-                  <CancelIcon style={{ color: "red" }} />
-                </IconButton>
-              )}
-            </InputAdornment>
-          ),
-        }}
-        error={!isRepeatValid}
-        helperText={
-          !isRepeatValid && repeatPasswordValue && (repeatHelperText || "")
-        }
-        {...props}
-      />
+      {repeatValue && (
+        <TextField
+          label={repeatLabel}
+          type="password"
+          value={repeatPasswordValue}
+          onChange={handleRepeatChange}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                {!isRepeatValid && repeatPasswordValue && (
+                  <IconButton>
+                    <CancelIcon style={{ color: "red" }} />
+                  </IconButton>
+                )}
+              </InputAdornment>
+            ),
+          }}
+          error={!isRepeatValid}
+          helperText={
+            !isRepeatValid && repeatPasswordValue && (repeatHelperText || "")
+          }
+          {...props}
+        />
+      )}
     </div>
   );
 }

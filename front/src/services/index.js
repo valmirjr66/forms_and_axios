@@ -6,6 +6,12 @@ const api = axios.create({
   headers: { 'X-Dummy-Token': process.env.REACT_APP_TOKEN }
 });
 
+export function loginUser(user, callback, errorHandler) {
+  api.post('/users/login', user)
+    .then(callback)
+    .catch(errorHandler);
+}
+
 export function insertUser(user, callback, errorHandler) {
   api.post('/users', user)
     .then(callback)

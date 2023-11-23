@@ -25,6 +25,15 @@ app.delete("/api/users/:id", (req, res) => {
   res.status(200).send();
 });
 
+app.post("/api/users/login", (req, res) => {
+  const userFound = users.find((user) => user.email === req.body.email);
+  if (userFound) {
+    res.status(400).send(userFound);
+  } else {
+    res.status(404);
+  }
+});
+
 app.post("/api/users", (req, res) => {
   if (users.some((user) => user.name === req.body.name)) {
     res.status(400).send("Nome já cadastrado");

@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Signup from './pages/Signup';
 import ListUsers from './pages/ListUsers';
+import Login from './pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/cadastro",
     element: <Signup />,
+  },
+  {
+    path: "/entrar",
+    element: <Login />,
   },
   {
     path: "/adm/listar-usuarios",

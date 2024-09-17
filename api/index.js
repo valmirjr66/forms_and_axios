@@ -39,4 +39,9 @@ app.get("/api/products", (_, res) => {
   res.send(products);
 });
 
+app.get('/api/products/:id', (req, res) => {
+  const productFiltered = products.find(product => product.key === req.params.id)
+  res.status(200).send(productFiltered);
+});
+
 app.listen(8000);

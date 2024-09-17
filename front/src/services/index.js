@@ -29,3 +29,9 @@ export function listProducts(callback, errorHandler) {
     .then(callback)
     .catch(errorHandler);
 }
+
+export function getProductById(id, callback, errorHandler) {
+  api.get(`/products/${id}`)
+    .then(callback)
+    .catch(errorHandler);
+}
